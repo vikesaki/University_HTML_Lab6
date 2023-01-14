@@ -1,0 +1,27 @@
+mixin block-content-2(myImg='1', t1='no title', t2='no content')
+    hr
+    .block-title
+        if(myImg == '1')
+            img(alt='Нет картинки')
+        else
+            img(src = myImg)
+        p=t1
+        .main-title
+            p=t2
+
+<!DOCTYPE html>
+html
+    head
+        include headCode
+        block title
+    body
+        .h1
+            a(href="index.html") General overview
+        .h2
+            a(href="Page_02.html") List of attractions
+        block content
+        .my-block-1
+    .page-footer
+        .fixed-bottom
+            p made by
+                a(href = 'https://vk.com/faishalkemal')  Faishal Kemal

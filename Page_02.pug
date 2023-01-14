@@ -1,0 +1,168 @@
+extends setting
+
+mixin my-option
+    select
+        option(value='0') No
+        option(value='1') Name
+        option(value='2') Location
+        option(value='3') Province
+        option(value='4') Visitor
+        option(value='5') Price
+
+block title
+    title List of attractions
+
+mixin table-create(a, b, c, d, e)
+    tr
+        td=a
+        td=b
+        td=c
+        td=d
+        td=e
+
+block content
+    details
+        summary Display Settings Block:
+        .main-block
+            .block-01
+                .table
+                    .title-1-1
+                        p Chart:
+                    .left-edge-1
+                        p.title-1 Option
+                        p Visitor
+                            input(type='radio', name='ox', value='жанр')
+                        p Location
+                            input(type='radio', name='ox', value='жанр')
+                        p Province
+                            input(type='radio', name='ox', value='жанр')
+                        p Price
+                            input(type='radio', name='ox', value='жанр')
+                    .right-edge-1
+                        p.title-1 Result
+                        p Maximum
+                            input(type='checkbox', name='result', value='макс')
+                        p Minimum
+                            input(type='checkbox', name='result', value='мин')
+                    button Build
+            .block-02
+                .table-2-2
+                    .table
+                        .title-1-3
+                            p Filter:
+                        .left-edge-1
+                            p Name:
+                            p Location: (from):
+                            p Location: (before):
+                            p Province: (from):
+                            p Province: (before):
+                            p Visitor: (from):
+                            p Visitor: (before):
+                            p Price: (from):
+                            p Price: (before):
+                        .right-edge-1
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                            p
+                                input#name(type='text', placeholder='Enter')
+                        button To find
+            .block-03
+                .table-2
+                    .title-1-2
+                        p Sorting:
+                    .left-edge-2
+                        p First level
+                        p Second level
+                        p Third level
+                    .center-edge-2
+                        p
+                            +my-option
+                        p
+                            +my-option
+                        p
+                            +my-option
+                    .right-edge-2
+                        p.no-ind descending?
+                            input(type='checkbox', name='ack1', value='ack1')
+                        p.no-ind descending?
+                            input(type='checkbox', name='ack1', value='ack1')
+                        p.no-ind descending?
+                            input(type='checkbox', name='ack1', value='ack1')
+                    button Build
+
+    .my-block-1
+    .block-table-1
+        table
+            tr.title
+                td Name
+                td Location
+                td Province
+                td Visitor
+                td Price
+            +table-create('Masjid Raya Baiturrahman', 'Sumatra', 'Aceh', '305 086', 'Rp.0')
+            +table-create('Gunung Seulawah Agam', 'Sumatra', 'Aceh', '95 086', 'Rp.300.000')
+            +table-create('Taman Nasional Gunung Leuser', 'Sumatra', 'Aceh Barat Daya', '55 035', 'Rp.150.000')
+            +table-create('Istana Maimun', 'Sumatra', 'Medan', '74.291', 'Rp.50.000')
+            +table-create('Gundaling', 'Sumatra', 'Karo', '169.320', 'Rp.75.000')
+            +table-create('Danau Toba', 'Sumatra', 'Toba', '1.230.000', 'Rp.100.000')
+            +table-create('Jembatan Sitti Nurbaya', 'Sumatra', 'Padang', '50.000', 'Rp.0')
+            +table-create('Pantai Carolina', 'Sumatra', 'Padang', '250.000', 'Rp.30.000')
+            +table-create('Fort de Kock', 'Sumatra', 'Bukittinggi', '450.000', 'Rp.50.000')
+            +table-create('Jam Gadang', 'Sumatra', 'Bukittinggi', '250.000', 'Rp.0')
+            +table-create('Taman Nasional Kepulauan Seribu', 'Java', 'Kepulauan Seribu', '450.000', 'Rp.300.000')
+            +table-create('Taman Impian Jaya Ancol', 'Java', 'Jakarta', '1.500.000', 'Rp.0')
+            +table-create('TMII', 'Java', 'Jakarta', '889 993', 'Rp.100.000')
+            +table-create('Monumen Nasional', 'Java', 'Jakarta', '5.050.000', 'Rp.0')
+            +table-create('Taman Nasional Gunung Gede Pangrango', 'Java', 'Cianjur', '550.000', 'Rp.300.000')
+            +table-create('Taman Safari Indonesia', 'Java', 'Bogor', '1.100.000', 'Rp.250.000')
+            +table-create('Kebun Raya Bogo', 'Java', 'Bogor', '450.000', 'Rp.0')
+            +table-create('Pantai Anyer', 'Java', 'Serang', '1.350.000', 'Rp.150.000')
+            +table-create('Lawang Sewu', 'Java', 'Semarang', '123.000', 'Rp.200.000')
+            +table-create('Candi Gedongsongo', 'Java', 'Semarang', '2.050.000', 'Rp.150.000')
+            +table-create('Pulau Karimunjawa', 'Java', 'Jepara', '650.000', 'Rp.300.000')
+            +table-create('Benteng VOC', 'Java', 'Jepara', '150.000', 'Rp.100.000')
+            +table-create('Candi Borobudur', 'Java', 'Magelang', '4.550.000', 'Rp.250.000')
+            +table-create('Pegunungan Dieng', 'Java', 'Banjarnegara', '950.000', 'Rp.150.000')
+            +table-create('Keraton Kasunanan', 'Java', 'Surakarta', '2.000.000', 'Rp.200.000')
+            +table-create('Candi Sewu', 'Java', 'Klaten', '750.000', 'Rp.150.000')
+            +table-create('Candi Prambanan', 'Java', 'Sleman', '3.020.000', 'Rp.250.000')
+            +table-create('Benteng Vredeburg', 'Java', 'Yogyakarta', '1.023.000', 'Rp.150.000')
+            +table-create('Kraton Yogyakarta', 'Java', 'Yogyakarta', '2.500.000', 'Rp.200.000')
+            +table-create('Jalan Malioboro', 'Java', 'Yogyakarta', '1.500.000', 'Rp.0')
+            +table-create('Taman Nasional Bromo Tengger Semeru', 'Java', 'Malang', '3.750.000', 'Rp.150.000')
+            +table-create('Kuta', 'Bali', 'Bali', '5.000.000', 'Rp.1.500.000')
+            +table-create('Candi Dasa', 'Bali', 'Bali', '3.750.000', 'Rp.450.000')
+            +table-create('Nusa Dua', 'Bali', 'Bali', '4.000.000', 'Rp.1.000.000')
+            +table-create('Taman Nasional Gunung Rinjani', 'Lombok', 'Lombok Timur', '1.850.000', 'Rp.300.000')
+            +table-create('Pantai Senggigi', 'Lombok', 'Lombok Barat', '950.000', 'Rp.375.000')
+            +table-create('Gunung Tambora', 'Lombok', 'Dompu', '450.000', 'Rp.225.000')
+            +table-create('Taman Nasional Komodo', 'Nusa Tenggara Timur', 'Manggarai Barat', '550.000', 'Rp.400.000')
+            +table-create('Taman Nasional Kelimutu', 'Nusa Tenggara Timur', 'Ende', '850.000', 'Rp.250.000')
+            +table-create('Kepulauan Karimata', 'Kalimantan', 'Kayong Utara', '250.000', 'Rp.0')
+            +table-create('Taman Nasional Pegunungan Meratus', 'Kalimantan', 'Hulu Sungai Tengah', '650.000', 'Rp.100.000')
+            +table-create('Pantai Pagatan', 'Kalimantan', 'Tanah Bumbu', '469.000', 'Rp.130.000')
+            +table-create('Taman Nasional Tanjung Puting', 'Kalimantan', 'Kotawaringin', '400.000', 'Rp.120.000')
+            +table-create('Kedaton Kutai Kartanegara', 'Kalimantan', 'Kutai Kartanegara', '750.000', 'Rp.200.000')
+            +table-create('Air Terjun Bantimurung', 'Sulawesi', 'Bantimurung', '700.000', 'Rp.300.000')
+            +table-create('Pantai Losari', 'Sulawesi', 'Makassar', '600.000', 'Rp.120.000')
+            +table-create('Danau Tondano', 'Sulawesi', 'Minahasa', '250.000', 'Rp.100.000')
+            +table-create('Taman Nasional Wakatobi', 'Sulawesi', 'Wakatobi', '500.000', 'Rp.400.000')
+            +table-create('Pantai Pasir Panjang', 'Maluku', 'Kepulauan Aru', '450.000', 'Rp.300.000')
+            +table-create('Taman Nasional Lorentz', 'Papua', 'Asmat', '600.000', 'Rp.120.000')
+            +table-create('Sungai Ampera', 'Papua', 'Boven Digoel', '123.000', 'Rp.160.000')
+            +table-create('Pegunungan Carstensz', 'Papua', 'Intan Jaya', '600.000', 'Rp.120.000')
+            +table-create('Taman Nasional Teluk Cenderawasih', 'Papua', 'Manokwari', '600.000', 'Rp.120.000')
